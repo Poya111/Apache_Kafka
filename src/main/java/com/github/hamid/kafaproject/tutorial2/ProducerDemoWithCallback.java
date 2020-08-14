@@ -25,11 +25,12 @@ public class ProducerDemoWithCallback {
 
         // Producer Recorde
         ProducerRecord<String , String> record =
-                new ProducerRecord<String, String>("student", "Hello World Kafka Producer with callback!!!");
+                new ProducerRecord<String, String>("student", "Hello World Kafka Producer with callback!!!#$*&");
         // Send Data Asynchronous
         producer.send(record, new Callback() {
             //Execute every time a record successfully is sent or thrown an exception.
             public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+
                 if (e == null) {
                     //Log metadata when the record was successfully sent.
                     logger.info(" \n Topic:" + recordMetadata.topic() + "\n" +
@@ -38,6 +39,8 @@ public class ProducerDemoWithCallback {
                             "TimeStamp: " + recordMetadata.timestamp());
                 } else {
                     logger.error("error while producing.");
+                    // or StackTrace instead of logger
+                    //e.printStackTrace();
                 }
             }
         });
