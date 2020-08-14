@@ -28,7 +28,7 @@ public class ProducerDemoWithCallback {
                 new ProducerRecord<String, String>("student", "Hello World Kafka Producer with callback!!!");
         // Send Data Asynchronous
         producer.send(record, new Callback() {
-            //Execute every time a record is successfuly is sent or thrown an exception.
+            //Execute every time a record successfully is sent or thrown an exception.
             public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                 if (e == null) {
                     //Log metadata when the record was successfully sent.
