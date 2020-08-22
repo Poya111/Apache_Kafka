@@ -18,16 +18,16 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-public class TwitterProducer {
+public class TwitterFetchData {
 
-    Logger logger = LoggerFactory.getLogger(TwitterProducer.class.getName());
+    Logger logger = LoggerFactory.getLogger(TwitterFetchData.class.getName());
 
-    public TwitterProducer() {
+    public TwitterFetchData() {
     }
 
     public static void main(String[] args) {
         System.out.println("Twitter");
-        new TwitterProducer().run();
+        new TwitterFetchData().run();
     }
 
     public void run() {
