@@ -17,6 +17,7 @@ public class ElasticSearchConsumerDemo {
 
     public static RestHighLevelClient createClient(){
 
+        //Using localhost ElasticSearch
         String hostname = "localhost";
         RestClientBuilder builder = RestClient.builder(new HttpHost(hostname, 9200, "http"));
         RestHighLevelClient client = new RestHighLevelClient(builder);
@@ -29,7 +30,7 @@ public class ElasticSearchConsumerDemo {
 
         RestHighLevelClient client = createClient();
 
-        String jsonString = "{\"foo15\" : \"bar15\"}";
+        String jsonString = "{\"foo16\" : \"bar16\"}";
         IndexRequest indexRequest = new IndexRequest("twitter", "tweet");
         indexRequest.source(jsonString, XContentType.JSON);
 
